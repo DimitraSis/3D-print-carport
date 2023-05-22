@@ -6,14 +6,19 @@ public class Test
 {
 	public static void main(String[] args)
 	{
-		stolpe();
-		rem();
+		//stolpe();
+		//rem();
 		spaer();
 	}
 
 	public static void stolpe(){
+/**
+ *
+ * support pillars that go to the ground ( vertical)
+ *
+ * z is the variable for the length of stolpe
+ */
 
-		// support pillars that go to the ground ( vertical)
 
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
@@ -26,17 +31,26 @@ public class Test
 	}
 
 	public static void rem(){
-		// horizontal support
+		/**
+		 * x is the variable for the length of rem
+		 * horizontal support
+		 */
 
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
-		var rem= csg.box3D(10,10,200,false);
+		var rem= csg.box3D(200,10,10,false);
 
 		csg.view(rem);
 	}
 
 	public static void spaer(){
-		//horizontal tag support
+
+		/**
+		 * x is the variable for the length of spaer
+		 *
+		 * horizontal tag support
+		 */
+
 
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
