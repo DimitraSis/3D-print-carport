@@ -10,7 +10,7 @@ public class Test {
 
 
 	private static String USER = "root";
-	private static String PASSWORD = "1234morten";
+	private static String PASSWORD = "123456";
 	private static String URL = "jdbc:mysql://localhost:3306/fogcarporte";
 
 
@@ -80,7 +80,7 @@ public class Test {
 
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
-		var stolpe= csg.box3D(15,10,height*20,false);
+		var stolpe= csg.box3D(15,10,height*30,false);
 		var cutout = csg.box3D(10, 10, 6, false);
 
 		stolpe = csg.difference3D(stolpe, cutout);
@@ -96,7 +96,7 @@ public class Test {
 
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
-		var rem= csg.box3D(length*20,10,10,false);
+		var rem= csg.box3D(length*30,10,10,false);
 
 		csg.view(rem);
 	}
@@ -113,13 +113,13 @@ public class Test {
 		JavaCSG csg = JavaCSGFactory.createDefault();
 
 
-		var spaer= csg.box3D(width*20,10,10,false);
+		var spaer= csg.box3D(width*30,10,10,false);
 		var cutout = csg.box3D(10, 10, 3, false);
 
 		for ( int x = -1; x < 2; x++) {
 			for (int y = -1; y < 1; y++){
 				cutout = csg.box3D(10, 10, 3, false);
-				cutout = csg.translate3D(50*x, 30*y, 0).transform(cutout);
+				cutout = csg.translate3D((width*12)*x, 30*y, 0).transform(cutout);
 				spaer = csg.difference3D(spaer, cutout);
 			}
 		}
